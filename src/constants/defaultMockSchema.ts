@@ -3,6 +3,14 @@ import { ActionType, FormElement, InputType } from "../@types/FormElement";
 export const defaultSchema: FormElement = {
   type: "VStack",
   containerStyles: { gap: "16px", padding: "20px", backgroundColor: "#f9f9f9" },
+  formTitle: {
+    title: "My Form Title",
+    titleStyles: {
+      "color": "#333",
+      "textAlign": "center",
+      "marginBottom": "20px"
+    }
+  },
   children: [
     {
       type: "HStack",

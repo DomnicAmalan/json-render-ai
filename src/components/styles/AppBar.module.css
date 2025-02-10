@@ -1,0 +1,47 @@
+.appBar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    background-color: #f4f4f4;
+    border-bottom: 1px solid #ccc;
+    /* Optional: Add a border for separation */
+}
+
+.appBarLeft {
+    display: flex;
+    align-items: center;
+}
+
+.appBarRight {
+    display: flex;
+    gap: 10px;
+    /* Space between Settings and Sign Out */
+    align-items: center;
+}
+
+.appBarLink {
+    text-decoration: none;
+    color: black;
+    font-size: 16px;
+    cursor: pointer;
+}
+
+.appBarLink:hover {
+    text-decoration: underline;
+    color: blue;
+}
+
+.appBarSignout {
+    padding: 5px 10px;
+    cursor: pointer;
+    border: none;
+    background-color: red;
+    color: white;
+    font-size: 14px;
+    border-radius: 4px;
+}
+
+.appBarSignout:hover {
+    background-color: darkred;
+}

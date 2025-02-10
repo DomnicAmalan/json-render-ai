@@ -1,0 +1,78 @@
+/* src/styles/Workspace.module.css */
+
+.workspaceContainer {
+    padding: 20px;
+}
+
+.workspaceHeader {
+    font-size: 24px;
+    margin-bottom: 20px;
+    text-align: center;
+    font-weight: bold;
+}
+
+.workspaceList {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 20px;
+}
+
+.workspaceItem {
+    background-color: #f0f0f0;
+    padding: 20px;
+    border-radius: 12px;
+    text-align: center;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 200px;
+    cursor: pointer;
+    position: relative;
+    align-items: center;
+}
+
+.workspaceItem:hover {
+    transform: translateY(-10px);
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+}
+
+.workspaceError {
+    color: red;
+    font-size: 14px;
+    margin-top: 10px;
+}
+
+.workspaceLoading {
+    font-size: 16px;
+    margin-top: 10px;
+}
+
+.createWorkspaceButton {
+    background-color: #007bff;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-bottom: 20px;
+    width: 200px;
+}
+
+.createWorkspaceButton:hover {
+    background-color: #0056b3;
+}
+
+/* Media Queries for Responsiveness */
+@media (max-width: 768px) {
+    .workspaceList {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+@media (max-width: 480px) {
+    .workspaceList {
+        grid-template-columns: 1fr;
+    }
+}

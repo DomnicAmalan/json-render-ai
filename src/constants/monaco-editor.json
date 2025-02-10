@@ -1,0 +1,182 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "title": "Form Schema",
+    "type": "object",
+    "properties": {
+      "type": {
+        "type": "string",
+        "enum": [
+          "VStack",
+          "HStack",
+          "input",
+          "button",
+          "text",
+          "a"
+        ]
+      },
+      "label": {
+        "type": "string"
+      },
+      "name": {
+        "type": "string"
+      },
+      "inputType": {
+        "type": "string",
+        "enum": [
+          "text",
+          "number",
+          "checkbox"
+        ]
+      },
+      "styles": {
+        "type": "object",
+        "properties": {
+          "containerStyles": {
+            "$ref": "#/definitions/CSSProperties"
+          },
+          "labelStyles": {
+            "$ref": "#/definitions/CSSProperties"
+          },
+          "componentStyles": {
+            "$ref": "#/definitions/CSSProperties"
+          }
+        },
+        "additionalProperties": false
+      },
+      "children": {
+        "type": "array",
+        "items": {
+          "$ref": "#"
+        }
+      },
+      "actions": {
+        "type": "array",
+        "items": {
+          "type": "object",
+          "properties": {
+            "type": {
+              "type": "string"
+            },
+            "handler": {
+              "type": "string",
+              "enum": [
+                "alertMessage",
+                "apiCall",
+                "customAction"
+              ]
+            },
+            "url": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "type",
+            "handler"
+          ]
+        }
+      },
+      "onRender": {
+        "type": "object",
+        "properties": {
+          "handler": {
+            "type": "string",
+            "enum": [
+              "apiCall"
+            ]
+          },
+          "url": {
+            "type": "string"
+          },
+          "method": {
+            "type": "string",
+            "enum": [
+              "GET"
+            ]
+          }
+        },
+        "required": [
+          "handler",
+          "url",
+          "method"
+        ]
+      },
+      "htmlProps": {
+        "type": "object",
+        "properties": {
+          "tag": {
+            "type": "string",
+            "enum": [
+              "div",
+              "span",
+              "h1",
+              "h2",
+              "h3",
+              "h4",
+              "h5",
+              "h6",
+              "p",
+              "a",
+              "button",
+              "input",
+              "form",
+              "label",
+              "select",
+              "option",
+              "textarea"
+            ]
+          },
+          "className": {
+            "type": "string"
+          },
+          "id": {
+            "type": "string"
+          },
+          "style": {
+            "$ref": "#/definitions/CSSProperties"
+          }
+        },
+        "additionalProperties": true
+      }
+    },
+    "required": [
+      "type"
+    ],
+    "definitions": {
+      "CSSProperties": {
+        "type": "object",
+        "properties": {
+          "alignContent": { "type": "string" },
+          "alignItems": { "type": "string" },
+          "alignSelf": { "type": "string" },
+          "backgroundColor": { "type": "string" },
+          "border": { "type": "string" },
+          "borderRadius": { "type": "string" },
+          "boxShadow": { "type": "string" },
+          "color": { "type": "string" },
+          "cursor": { "type": "string" },
+          "display": { "type": "string" },
+          "flexDirection": { "type": "string" },
+          "fontSize": { "type": "string" },
+          "fontWeight": { "type": "string" },
+          "gap": { "type": "string" },
+          "height": { "type": "string" },
+          "justifyContent": { "type": "string" },
+          "margin": { "type": "string" },
+          "marginTop": { "type": "string" },
+          "marginRight": { "type": "string" },
+          "marginBottom": { "type": "string" },
+          "marginLeft": { "type": "string" },
+          "padding": { "type": "string" },
+          "paddingTop": { "type": "string" },
+          "paddingRight": { "type": "string" },
+          "paddingBottom": { "type": "string" },
+          "paddingLeft": { "type": "string" },
+          "position": { "type": "string" },
+          "textAlign": { "type": "string" },
+          "width": { "type": "string" },
+          "zIndex": { "type": "string" }
+        },
+        "additionalProperties": false
+      }
+    }
+  }

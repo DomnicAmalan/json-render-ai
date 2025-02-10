@@ -1,3 +1,5 @@
+import React from "react";
+
 export enum ActionType {
   ALERT_MESSAGE = "alertMessage",
   API_CALL = "apiCall",
@@ -31,6 +33,7 @@ export enum InputType {
 }
 
 export interface FormElement {
+  formTitle?: FormTitleProps;
   type: string;
   label?: string;
   name?: string;
@@ -41,4 +44,9 @@ export interface FormElement {
   children?: FormElement[];
   actions?: { type: string; handler: string; url?: string }[];
   htmlProps?: React.HTMLAttributes<HTMLElement>;
+}
+
+export interface FormTitleProps {
+  title?: string;
+  titleStyles?: React.CSSProperties;
 }
