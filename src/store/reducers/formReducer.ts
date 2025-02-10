@@ -1,6 +1,6 @@
-// formReducer.ts
+
 import { createSlice, PayloadAction } from "@reduxjs/toolkit";
-import { FormData } from "../types"; // Assuming form data is a type in your types file
+import { FormData } from "../types"; 
 
 interface FormState {
   formData: FormData[] | null;
@@ -11,7 +11,7 @@ interface FormState {
 
 const initialState: FormState = {
   formData: null,
-  currentForm: null, // To store the current form
+  currentForm: null, 
   loading: false,
   error: null,
 };
@@ -38,7 +38,7 @@ const formSlice = createSlice({
     },
     fetchFormByWorkspaceAndFormIdSuccess(state, action: PayloadAction<FormData>) {
       state.loading = false;
-      state.currentForm = action.payload; // Store the fetched form in currentForm
+      state.currentForm = action.payload; 
     },
     fetchFormByWorkspaceAndFormIdFailure(state, action: PayloadAction<string>) {
       state.loading = false;
@@ -61,7 +61,7 @@ const formSlice = createSlice({
     },
     updateFormSuccess(state, action: PayloadAction<FormData>) {
       state.loading = false;
-      state.currentForm = action.payload; // Update the current form with the updated form data
+      state.currentForm = action.payload; 
     },
     updateFormFailure(state, action: PayloadAction<string>) {
       state.loading = false;
@@ -73,9 +73,11 @@ const formSlice = createSlice({
     },
     deleteFormSuccess(state, action: PayloadAction<{ workspaceId: string, formId: string }>) {
       state.loading = false;
-      state.formData = state.formData?.filter(
-        (form) => form.workspaceId !== action.payload.workspaceId || form.id !== action.payload.formId
-      );
+      if(state?.formData) {
+        state.formData = state.formData.filter(
+            (form) => form.workspaceId !== action.payload.workspaceId || form.id !== action.payload.formId
+        );
+      }
     },
     deleteFormFailure(state, action: PayloadAction<string>) {
       state.loading = false;

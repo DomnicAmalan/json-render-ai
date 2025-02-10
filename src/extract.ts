@@ -1,12 +1,9 @@
 import * as ts from 'typescript';
 
-// Function to extract all valid HTML/JSX intrinsic props
 export function extractHtmlProps(): Record<string, string[]> {
-  // Create a TypeScript program (empty since we just use built-in types)
   const program = ts.createProgram([], { jsx: ts.JsxEmit.React });
   const checker = program.getTypeChecker();
 
-  // Get the global JSX namespace declaration
   const sourceFile = ts.createSourceFile(
     'temp.ts',
     'declare namespace JSX { interface IntrinsicElements {} }',
@@ -15,7 +12,6 @@ export function extractHtmlProps(): Record<string, string[]> {
     ts.ScriptKind.TS
   );
 
-  // Retrieve JSX.IntrinsicElements
   const jsxNamespace = sourceFile.statements.find(
     stmt => ts.isModuleDeclaration(stmt) && stmt.name.getText() === 'JSX'
   ) as ts.ModuleDeclaration;
@@ -49,7 +45,6 @@ export function extractHtmlProps(): Record<string, string[]> {
       const tagName = member.name.text;
       const props: string[] = [];
 
-      // Get the type of the element
       const type = checker.getTypeAtLocation(member);
       type.getProperties().forEach(prop => props.push(prop.getName()));
 

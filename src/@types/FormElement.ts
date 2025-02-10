@@ -38,9 +38,9 @@ export interface FormElement {
   label?: string;
   name?: string;
   inputType?: InputType;
-  containerStyles?: React.CSSProperties; // Add this line
-  labelStyles?: React.CSSProperties;     // Add this line
-  componentStyles?: React.CSSProperties; // Add this line
+  containerStyles?: React.CSSProperties;
+  labelStyles?: React.CSSProperties;
+  componentStyles?: React.CSSProperties;
   children?: FormElement[];
   actions?: { type: string; handler: string; url?: string }[];
   htmlProps?: React.HTMLAttributes<HTMLElement>;

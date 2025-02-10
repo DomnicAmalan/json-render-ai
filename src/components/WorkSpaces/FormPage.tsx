@@ -1,18 +1,18 @@
 import React, { useCallback, useEffect, useState, useMemo } from "react";
-import { useParams } from "react-router-dom"; // Use useParams to get URL params
+import { useParams } from "react-router-dom"; 
 import MonacoEditor from "@monaco-editor/react";
 import { defaultSchema } from "../../constants/defaultMockSchema";
 import { configureMonacoEditor, defaultEditorOptions } from "../../utils/MonacoEditor";
 import FormRenderer from "../FormRenderer";
 import { debounce } from "../../utils/debounce";
 import { useDispatch, useSelector } from "react-redux";
-import { fetchFormByWorkspaceAndFormIdRequest, updateFormRequest } from "../../store/reducers/formReducer"; // Import the update action
+import { fetchFormByWorkspaceAndFormIdRequest, updateFormRequest } from "../../store/reducers/formReducer"; 
 import { RootState } from "../../store";
 
 const FormPage: React.FC = () => {
   const { id, formid } = useParams();
   const dispatch = useDispatch();
-  const { currentForm, loading, error } = useSelector((state: RootState) => state.form); // Select the state from Redux
+  const { currentForm, loading, error } = useSelector((state: RootState) => state.form); 
 
   const [jsonSchema, setJsonSchema] = useState<string>(() => JSON.stringify(defaultSchema, null, 2));
   const [formData, setFormData] = useState<any>({});

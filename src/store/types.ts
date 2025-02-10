@@ -7,12 +7,12 @@ export interface AuthAction {
 }
 
 export interface AuthResponse {
-    // Define the structure of your auth response
+    
     token: string;
 }
 
 export interface User {
-    // Define user properties
+    
     id: string;
     email: string;
 }

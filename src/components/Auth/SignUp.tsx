@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { useDispatch } from 'react-redux';
 import { Link } from 'react-router-dom';
-import styles from '../styles/Signup.module.css'; // Import the CSS module
+import styles from '../styles/Signup.module.css'; 
 import { signupRequest } from '../../store/reducers/authReducer';
 
 const SignUp = () => {
@@ -11,7 +11,7 @@ const SignUp = () => {
   
     const handleSubmit = (e: React.FormEvent<HTMLFormElement>) => {
       e.preventDefault();
-      // Dispatch the signupRequest action with email and password
+      
       dispatch(signupRequest({ email, password }));
     };
   

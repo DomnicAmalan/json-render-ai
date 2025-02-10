@@ -7,7 +7,7 @@ export const signupApi = async (payload: { email: string; password: string }): P
     const response = await axiosUnauthInstance.post('/auth/signup', payload);
     return response.data;
   } catch (error) {
-    // Handle error
+    
     console.error('Signup error:', error);
     throw error;
   }
@@ -18,7 +18,7 @@ export const signinApi = async (payload: { email: string; password: string }): P
     const response = await axiosUnauthInstance.post('/auth/signin', payload);
     return response.data;
   } catch (error) {
-    // Handle error
+    
     console.error('Signin error:', error);
     throw error;
   }
@@ -26,7 +26,7 @@ export const signinApi = async (payload: { email: string; password: string }): P
 
 export const signoutApi = async (): Promise<any> => {
   try {
-    const response = await axiosAuthInstance.post('/auth/signout'); // Adjust the endpoint as needed
+    const response = await axiosAuthInstance.post('/auth/signout'); 
     return response.data;
   } catch (error) {
     console.error('Signout error:', error);

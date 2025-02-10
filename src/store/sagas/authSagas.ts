@@ -38,14 +38,14 @@ function* signinSaga(action: AuthAction) {
 
 function* signoutSaga() {
   try {
-    yield call(signoutApi); // Call signout API
+    yield call(signoutApi); 
 
     localStorage.removeItem('token');
-    localStorage.removeItem('user'); // Remove user data if stored
+    localStorage.removeItem('user'); 
 
     yield put(signoutSuccess());
 
-    window.location.href = '/signin'; // Redirect to sign-in page
+    window.location.href = '/signin'; 
   } catch (error: any) {
     yield put(signoutFailure(error.message));
   }
@@ -54,5 +54,5 @@ function* signoutSaga() {
 export default function* authSagas() {
   yield takeLatest(signupRequest.type, signupSaga);
   yield takeLatest(signinRequest.type, signinSaga);
-  yield takeLatest(signoutRequest.type, signoutSaga); // Listen for signoutRequest
+  yield takeLatest(signoutRequest.type, signoutSaga); 
 }

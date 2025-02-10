@@ -1,7 +1,6 @@
-// src/components/Workspace.tsx
+
 import React, { useEffect } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom"; // Import useNavigate
 import {
   createWorkspaceRequest,
   fetchWorkspacesRequest,
@@ -45,7 +44,7 @@ const Workspace: React.FC = () => {
           <div
             className={styles.workspaceItem}
             key={workspace.id}
-            onClick={() => handleWorkspaceClick(workspace.id)} // Click to go to the workspace detail
+            onClick={() => handleWorkspaceClick(workspace.id)} 
           >
             <h3>{workspace.name}</h3>
           </div>

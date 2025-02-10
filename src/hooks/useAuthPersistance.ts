@@ -8,8 +8,8 @@ export const useAuthPersistence = () => {
   useEffect(() => {
     const token = localStorage.getItem('token');
     if (token) {
-      // Optionally fetch user data from the backend or decode the token
-      const user = JSON.parse(localStorage.getItem('user') || '{}'); // Example: Store user data in localStorage
+      
+      const user = JSON.parse(localStorage.getItem('user') || '{}'); 
       dispatch(signinSuccess(user));
     }
   }, [dispatch]);

@@ -1,6 +1,6 @@
 import createSagaMiddleware from 'redux-saga';
 import { persistStore, persistReducer } from 'redux-persist';
-import storage from 'redux-persist/lib/storage'; // defaults to localStorage for web
+import storage from 'redux-persist/lib/storage'; 
 import rootReducer from './reducers';
 import rootSaga from './sagas';
 import { configureStore } from '@reduxjs/toolkit';
@@ -20,7 +20,7 @@ const store = configureStore({
   middleware: (getDefaultMiddleware) => 
     getDefaultMiddleware({
       serializableCheck: {
-        // Ignore these action types
+        
         ignoredActions: ['persist/PERSIST'],
       },
     }).concat(sagaMiddleware),

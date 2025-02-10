@@ -6,9 +6,9 @@ export const useSignOut = () => {
 
   const handleSignOut = () => {
     localStorage.removeItem('token');
-    localStorage.removeItem('user'); // Remove user data if stored
+    localStorage.removeItem('user'); 
     dispatch(signoutRequest());
-    window.location.href = '/signin'; // Redirect to login page
+    window.location.href = '/signin'; 
   };
 
   return handleSignOut;
