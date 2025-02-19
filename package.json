@@ -12,6 +12,7 @@
   "dependencies": {
     "@monaco-editor/react": "^4.6.0",
     "@reduxjs/toolkit": "^2.5.1",
+    "@types/node": "^22.13.4",
     "axios": "^1.7.9",
     "glob": "^11.0.1",
     "monaco-css": "^3.9.0",
