@@ -20,11 +20,11 @@ const formSlice = createSlice({
   name: "form",
   initialState,
   reducers: {
-    fetchFormRequest(state, action: PayloadAction<string>) {
+    fetchFormRequest(state, _action: PayloadAction<string>) {
       state.loading = true;
       state.error = null;
     },
-    fetchFormSuccess(state, action: PayloadAction<FormData[]>) {
+    fetchFormSuccess(state,  action: PayloadAction<FormData[]>) {
       state.loading = false;
       state.formData = action.payload;
     },
@@ -32,7 +32,7 @@ const formSlice = createSlice({
       state.loading = false;
       state.error = action.payload;
     },
-    fetchFormByWorkspaceAndFormIdRequest(state, action: PayloadAction<{workspaceId: string, formId: string}>) {
+    fetchFormByWorkspaceAndFormIdRequest(state, _action: PayloadAction<{workspaceId: string, formId: string}>) {
       state.loading = true;
       state.error = null;
     },
@@ -44,7 +44,7 @@ const formSlice = createSlice({
       state.loading = false;
       state.error = action.payload;
     },
-    createFormRequest(state, action: PayloadAction<{ workspaceId: string, formData: any, name: string }>) {
+    createFormRequest(state, _action: PayloadAction<{ workspaceId: string, formData: any, name: string }>) {
       state.loading = true;
       state.error = null;
     },
@@ -55,7 +55,7 @@ const formSlice = createSlice({
       state.loading = false;
       state.error = action.payload;
     },
-    updateFormRequest(state, action: PayloadAction<{ workspaceId: string, formId: string, formJson: any }>) {
+    updateFormRequest(state, _action: PayloadAction<{ workspaceId: string, formId: string, formJson: any }>) {
       state.loading = true;
       state.error = null;
     },
@@ -67,7 +67,7 @@ const formSlice = createSlice({
       state.loading = false;
       state.error = action.payload;
     },
-    deleteFormRequest(state, action: PayloadAction<{ workspaceId: string, formId: string }>) {
+    deleteFormRequest(state, _action: PayloadAction<{ workspaceId: string, formId: string }>) {
       state.loading = true;
       state.error = null;
     },

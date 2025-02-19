@@ -10,6 +10,7 @@ export const handleApiCall = async (url: string, formData: any) => {
       body: JSON.stringify(formData),
     });
     const data = await response.json();
+    return data;
   } catch (error) {
   }
 };

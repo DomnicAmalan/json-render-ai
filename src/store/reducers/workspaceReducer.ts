@@ -18,7 +18,7 @@ const workspaceSlice = createSlice({
   name: "workspace",
   initialState,
   reducers: {
-    createWorkspaceRequest(state, action: PayloadAction<{name: string}>) {
+    createWorkspaceRequest(state, _action: PayloadAction<{name: string}>) {
       state.loading = true;
       state.error = null;
     },

@@ -12,11 +12,11 @@ const authSlice = createSlice({
   name: 'auth',
   initialState,
   reducers: {
-    signupRequest(state, action: PayloadAction<AuthCredentials>) {
+    signupRequest(state, _action: PayloadAction<AuthCredentials>) {
       state.loading = true;
       state.error = null;
     },
-    signinRequest(state, action: PayloadAction<AuthCredentials>) {
+    signinRequest(state, _action: PayloadAction<AuthCredentials>) {
       state.loading = true;
       state.error = null;
     },
