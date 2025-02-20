@@ -11,7 +11,6 @@ const WorkspaceView: React.FC = () => {
   const dispatch = useDispatch();
 
   const { formData, loading, error } = useSelector((state: RootState) => state.form);
-
   useEffect(() => {
     if (id) {
       dispatch(fetchFormRequest(id));

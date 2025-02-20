@@ -17,7 +17,7 @@ const FormPage: React.FC = () => {
   const [jsonSchema, setJsonSchema] = useState<string>(() => JSON.stringify(defaultSchema, null, 2));
   const [_errorMessage, setErrorMessage] = useState<string | null>(null);
   const [formData, setFormData] = useState<any>({});
-
+  console.log(formData, 'formData')
   const handleInputChange = (e: React.ChangeEvent<HTMLInputElement>, name: string) => {
     setFormData((prevData: any) => ({
       ...prevData,
@@ -75,7 +75,7 @@ const FormPage: React.FC = () => {
       } catch (error) {
         setErrorMessage("Invalid JSON: Please check your input.");
       }
-    }, 3000),
+    }, 1000),
     [id, formid]
   );
 
