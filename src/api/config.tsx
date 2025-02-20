@@ -1,7 +1,6 @@
 import axios, { AxiosInstance } from 'axios';
 
 const apiURL = import.meta.env.VITE_APP_API_URL;
-console.log(apiURL, 'apiURL')
 const axiosUnauthInstance: AxiosInstance = axios.create({
   baseURL: apiURL, 
   timeout: 10000, 

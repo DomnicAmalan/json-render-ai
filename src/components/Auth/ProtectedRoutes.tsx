@@ -9,7 +9,6 @@ interface ProtectedRouteProps {
 
 export const ProtectedRoute: React.FC<ProtectedRouteProps> = ({ children }) => {
   const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthenticated);
-  console.log(isAuthenticated, 'isAuthenticated', children)
   if (!isAuthenticated) {
     return <Navigate to="/signin" />;
   }
