@@ -1,7 +1,9 @@
 import axios, { AxiosInstance } from 'axios';
 
+const apiURL = import.meta.env.VITE_APP_API_URL;
+console.log(apiURL, 'apiURL')
 const axiosUnauthInstance: AxiosInstance = axios.create({
-  baseURL: "https://json-web-render.run.place", 
+  baseURL: apiURL, 
   timeout: 10000, 
   headers: {
     'Content-Type': 'application/json',
@@ -27,7 +29,7 @@ const logOutUser = () => {
 };
 
 const axiosAuthInstance: AxiosInstance = axios.create({
-  baseURL: 'http://localhost:3000',
+  baseURL: apiURL,
   timeout: 10000,
   headers: {
     'Content-Type': 'application/json',

@@ -23,6 +23,7 @@ function* createWorkspaceSaga(action: any) {
 function* fetchWorkspacesSaga() {
   try {
     const workspaces: Workspace[] = yield call(fetchWorkspacesApi);
+    console.log(workspaces, 'workspacess')
     yield put(fetchWorkspacesSuccess(workspaces));
   } catch (error: any) {
     yield put(fetchWorkspacesFailure(error.message));

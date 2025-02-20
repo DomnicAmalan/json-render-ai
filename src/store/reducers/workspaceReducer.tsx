@@ -31,6 +31,7 @@ const workspaceSlice = createSlice({
       state.error = action.payload;
     },
     fetchWorkspacesRequest(state) {
+      console.log('fetchWorkspacesRequest')
       state.loading = true;
       state.error = null;
     },

@@ -15,6 +15,7 @@ const Workspace: React.FC = () => {
   );
 
   useEffect(() => {
+    console.log(workspaces, 'sdjksjdsk')
     dispatch(fetchWorkspacesRequest());
   }, [dispatch]);
 
@@ -28,29 +29,30 @@ const Workspace: React.FC = () => {
   const handleWorkspaceClick = (id: string) => {
     window.location.href = `/workspace/${id}`
   };
-
+  console.log(workspaces, 'sdjksjdsk')
   return (
-    <div className={styles.workspaceContainer}>
-      <h2 className={styles.workspaceHeader}>Workspaces</h2>
-      <button className={styles.createWorkspaceButton} onClick={handleCreateWorkspace}>
-        Create Workspace
-      </button>
+    <></>
+    // <div className={styles.workspaceContainer}>
+    //   <h2 className={styles.workspaceHeader}>Workspaces</h2>
+    //   <button className={styles.createWorkspaceButton} onClick={handleCreateWorkspace}>
+    //     Create Workspace
+    //   </button>
       
-      {loading && <p className={styles.workspaceLoading}>Loading...</p>}
-      {error && <p className={styles.workspaceError}>{error}</p>}
+    //   {loading && <p className={styles.workspaceLoading}>Loading...</p>}
+    //   {error && <p className={styles.workspaceError}>{error}</p>}
       
-      <div className={styles.workspaceList}>
-        {workspaces?.map((workspace: any) => (
-          <div
-            className={styles.workspaceItem}
-            key={workspace.id}
-            onClick={() => handleWorkspaceClick(workspace.id)} 
-          >
-            <h3>{workspace.name}</h3>
-          </div>
-        ))}
-      </div>
-    </div>
+    //   <div className={styles.workspaceList}>
+    //     {workspaces?.map((workspace: any) => (
+    //       <div
+    //         className={styles.workspaceItem}
+    //         key={workspace.id}
+    //         onClick={() => handleWorkspaceClick(workspace.id)} 
+    //       >
+    //         <h3>{workspace.name}</h3>
+    //       </div>
+    //     ))}
+    //   </div>
+    // </div>
   );
 };
 
