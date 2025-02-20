@@ -1,7 +1,7 @@
 import axios, { AxiosInstance } from 'axios';
 
 const axiosUnauthInstance: AxiosInstance = axios.create({
-  baseURL: process.env.BASE_URL, 
+  baseURL: "https://json-web-render.run.place", 
   timeout: 10000, 
   headers: {
     'Content-Type': 'application/json',

@@ -17,6 +17,7 @@ function* signupSaga(action: AuthAction) {
   try {
     const data: User = yield call(signupApi, action.payload);
     yield put(signupSuccess(data));
+    window.location.href = '/signin';
   } catch (error: any) {
     yield put(signupFailure(error.message));
   }

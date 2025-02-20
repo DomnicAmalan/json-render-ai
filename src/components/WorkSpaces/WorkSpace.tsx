@@ -40,7 +40,7 @@ const Workspace: React.FC = () => {
       {error && <p className={styles.workspaceError}>{error}</p>}
       
       <div className={styles.workspaceList}>
-        {workspaces.map((workspace: any) => (
+        {workspaces?.map((workspace: any) => (
           <div
             className={styles.workspaceItem}
             key={workspace.id}

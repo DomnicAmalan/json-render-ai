@@ -4,6 +4,7 @@ import {
   BrowserRouter as Router,
   Routes,
   Route,
+  Navigate,
 } from 'react-router-dom';
 import Signin from "./components/Auth/SignIn";
 import Signup from "./components/Auth/SignUp";
@@ -13,8 +14,12 @@ import AppBar from "./components/AppBar";
 import Workspace from "./components/WorkSpaces/WorkSpace";
 import FormPage from "./components/WorkSpaces/FormPage";
 import WorkspaceView from "./components/WorkSpaces/WorkSpaceView";
+import { useSelector } from "react-redux";
+import { RootState } from "./store";
 
 const Provider: React.FC = () => {
+  const isAuthenticated = useSelector((state: RootState) => state.auth.isAuthenticated);
+
   return (
     <Router>
       <div>
@@ -23,6 +28,12 @@ const Provider: React.FC = () => {
         <Routes>
           <Route path="/signin" element={<Signin />} />
           <Route path="/signup" element={<Signup />} />
+          <Route
+            path="/"
+            element={
+              isAuthenticated ? <Navigate to="/workspace" /> : <Navigate to="/signin" />
+            }
+          />
           <Route
             path="/workspace"
             element={
